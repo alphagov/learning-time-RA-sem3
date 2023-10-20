@@ -1,0 +1,10 @@
+*.sh
+.env*
+.eslintignore
+.gitignore
+.husky
+.prettierignore
+.github
+*.md
+tsconfig.json
+.nvmrc
