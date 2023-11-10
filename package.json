@@ -5,11 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "jest -c jest.config.ts",
+    "test:dbActive": "node --env-file .env -r ts-node/register scripts/testDb.ts",
     "test:cov": "jest -c jest.config.ts --coverage",
     "lint": "prettier . --check || exit 1 ; eslint . --max-warnings=0",
     "lint:fix": "prettier . --write ; eslint . --fix",
     "build": "tsc",
-    "start:dev": "ts-node src/server.ts"
+    "start:dev": "node --env-file .env -r ts-node/register src/server.ts",
+    "db:start": "node --env-file .env -r ts-node/register scripts/dockerStart.ts",
+    "db:stop": "node --env-file .env -r ts-node/register scripts/dockerStop.ts",
+    "start": "node --env-file .env dist/src/server.js"
   },
   "keywords": [],
   "author": "",
