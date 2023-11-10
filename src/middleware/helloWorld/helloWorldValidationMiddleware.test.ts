@@ -1,6 +1,6 @@
 import { Request, NextFunction } from 'express'
 import { helloWorldValidationMiddleware } from './helloWorldValidationMiddleware'
-import { createMockResponseObject } from '../utils/test/createMockResponseObject'
+import { createMockResponseObject } from '../../utils/test/createMockResponseObject'
 
 describe(' helloWorldValidation Middleware tests', () => {
   beforeEach(() => {
