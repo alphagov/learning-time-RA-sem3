@@ -8,3 +8,4 @@
 *.md
 tsconfig.json
 .nvmrc
+*.njk
