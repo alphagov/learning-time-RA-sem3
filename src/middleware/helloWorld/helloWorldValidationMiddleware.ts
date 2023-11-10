@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from 'express'
-import { isHelloWorldRequestBody } from '../utils/types/helloWorld'
+import { isHelloWorldRequestBody } from '../../utils/types/helloWorld'
 
 export const helloWorldValidationMiddleware = (
   request: Request,
