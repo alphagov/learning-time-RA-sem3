@@ -5,3 +5,4 @@ export type EnvironmentVariable =
   | 'POSTGRES_DB'
   | 'POSTGRES_HOST'
   | 'ENV'
+  | 'HASH_SECRET'
