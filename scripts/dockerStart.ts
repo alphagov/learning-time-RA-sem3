@@ -1,13 +1,18 @@
 import { exec } from 'child_process'
 
-const dockerComposeUp = () =>
-  exec('docker compose up', (error, stdout, stderr) => {
-    if (error) {
-      console.error(`exec error: ${error}`)
-      return
+export const dockerComposeUp = (isTestEnv = false) =>
+  exec(
+    isTestEnv
+      ? 'docker compose --env-file ./src/utils/test/test.env up'
+      : 'docker compose up',
+    (error, stdout, stderr) => {
+      if (error) {
+        console.error(`exec error: ${error}`)
+        return
+      }
+      console.log(`stdout: ${stdout}`)
+      console.error(`stderr: ${stderr}`)
     }
-    console.log(`stdout: ${stdout}`)
-    console.error(`stderr: ${stderr}`)
-  })
+  )
 
 dockerComposeUp().stdout?.pipe(process.stdout)
