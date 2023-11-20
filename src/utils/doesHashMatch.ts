@@ -9,7 +9,5 @@ export const doesHashMatch = (
   const valueToCheck = createHmac('sha256', getEnv('HASH_SECRET'))
     .update(value + salt)
     .digest('hex')
-  console.log(value + salt)
-  console.log(hashedValue)
   return valueToCheck === hashedValue
 }
