@@ -6,7 +6,7 @@ export const isDbActive = async (): Promise<boolean> => {
     console.info('Connection has been established successfully.')
     return true
   } catch (error) {
-    console.error('Unable to connect to the database:', error)
+    console.info('Database is not running')
     return false
   }
 }

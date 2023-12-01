@@ -7,5 +7,3 @@ export const createUserTable = async () => {
         )`
   )
 }
-
-createUserTable().then(() => {})
