@@ -1,5 +1,5 @@
 import request from 'supertest'
-import app from './../../app'
+import app from '../../app'
 import { loginRequestValidationMiddleware } from '../../middleware/login/loginRequestValidationMiddleware'
 import { NextFunction, Request, Response } from 'express'
 import {

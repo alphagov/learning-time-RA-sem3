@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest -c jest.config.ts",
+    "test:integration": "jest -c jest.integration.config.ts",
     "test:dbActive": "node --env-file .env -r ts-node/register scripts/testDb.ts",
     "test:cov": "jest -c jest.config.ts --coverage",
     "lint": "prettier . --check || exit 1 ; eslint . --max-warnings=0",
