@@ -5,6 +5,7 @@ import { APP_VIEWS } from './config/config'
 import nunjucks from 'nunjucks'
 import rootRouter from './routers/root/rootRouter'
 import loginRouter from './routers/login/loginRouter'
+import signUpRouter from './routers/signUp/signUpRouter'
 
 const app = express()
 
@@ -19,5 +20,6 @@ nunjucks.configure(APP_VIEWS, {
 app.use(helloWorldRouter)
 app.use(rootRouter)
 app.use(loginRouter)
+app.use(signUpRouter)
 
 export default app
