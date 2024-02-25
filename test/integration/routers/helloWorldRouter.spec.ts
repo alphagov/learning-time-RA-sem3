@@ -1,9 +1,9 @@
 import request from 'supertest'
-import app from '../../app'
-import { helloWorldValidationMiddleware } from '../../middleware/helloWorld/helloWorldValidationMiddleware'
+import { helloWorldValidationMiddleware } from '../../../src/middleware/helloWorld/helloWorldValidationMiddleware'
+import app from '../../../src/app'
 import { NextFunction, Request, Response } from 'express'
 
-jest.mock('../../middleware/helloWorld/helloWorldValidationMiddleware', () => ({
+jest.mock( '../../../src/middleware/helloWorld/helloWorldValidationMiddleware', () => ({
   helloWorldValidationMiddleware: jest.fn(
     (_req: Request, _res: Response, next: NextFunction) => next()
   )

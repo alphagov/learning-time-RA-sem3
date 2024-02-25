@@ -1,14 +1,10 @@
 import request from 'supertest'
-import app from '../../app'
+import app from '../../../src/app'
 import { NextFunction, Request, Response } from 'express'
-import {
-  setupTestUserInDb,
-  tearDownTestDb
-} from '../../utils/test/setupTestUserInDb'
-import { TEST_USERNAME } from '../../utils/test/constants'
-import { signUpRequestValidationMiddleware } from '../../middleware/signup/signUpRequestValidationMiddleware'
+import { TEST_USERNAME } from '../../../src/utils/test/constants'
+import { signUpRequestValidationMiddleware } from '../../../src/middleware/signup/signUpRequestValidationMiddleware'
 
-jest.mock('../../middleware/signup/signUpRequestValidationMiddleware', () => ({
+jest.mock('../../../src/middleware/signup/signUpRequestValidationMiddleware', () => ({
   signUpRequestValidationMiddleware: jest.fn(
     (_req: Request, _res: Response, next: NextFunction) => next()
   )
@@ -19,13 +15,6 @@ describe('helloWorld Endpoint tests', () => {
     jest.clearAllMocks()
   })
 
-  beforeAll(async () => {
-    await setupTestUserInDb()
-  })
-
-  afterAll(async () => {
-    await tearDownTestDb()
-  })
 
   describe('GET endpoint tests', () => {
     it('returns a 200 and renders the GET endpoint template', async () => {

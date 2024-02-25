@@ -1,15 +1,11 @@
 import request from 'supertest'
-import app from '../../app'
-import { loginRequestValidationMiddleware } from '../../middleware/login/loginRequestValidationMiddleware'
+import app from '../../../src/app'
 import { NextFunction, Request, Response } from 'express'
-import {
-  setupTestUserInDb,
-  tearDownTestDb
-} from '../../utils/test/setupTestUserInDb'
-import { TEST_PASSWORD, TEST_USERNAME } from '../../utils/test/constants'
+import { TEST_PASSWORD, TEST_USERNAME } from '../utils/constants'
 import { randomUUID } from 'crypto'
+import { loginRequestValidationMiddleware } from '../../../src/middleware/login/loginRequestValidationMiddleware'
 
-jest.mock('../../middleware/login/loginRequestValidationMiddleware', () => ({
+jest.mock('../../../src/middleware/login/loginRequestValidationMiddleware', () => ({
   loginRequestValidationMiddleware: jest.fn(
     (_req: Request, _res: Response, next: NextFunction) => next()
   )
@@ -18,14 +14,6 @@ jest.mock('../../middleware/login/loginRequestValidationMiddleware', () => ({
 describe('helloWorld Endpoint tests', () => {
   beforeEach(() => {
     jest.clearAllMocks()
-  })
-
-  beforeAll(async () => {
-    await setupTestUserInDb()
-  })
-
-  afterAll(async () => {
-    await tearDownTestDb()
   })
 
   describe('GET endpoint tests', () => {
