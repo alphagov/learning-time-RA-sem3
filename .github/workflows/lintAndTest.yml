@@ -19,6 +19,9 @@ jobs:
           node-version: 20
       - name: corepack enable
         run: corepack enable
+      - name: pnpm install
+        if: always()
+        run: pnpm install
       - name: Lint
         if: always()
         run: pnpm lint
