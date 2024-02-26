@@ -1,0 +1,32 @@
+name: Lint code and run tests
+
+on: [push, workflow_dispatch]
+
+
+jobs:
+  lint-and-test:
+    name: Lint and Run Tests
+    permissions:
+      id-token: write
+      contents: read
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: corepack enable
+        run: corepack enable
+      - name: Lint
+        if: always()
+        run: pnpm lint
+      - name: Unit test
+        if: always()
+        run: pnpm test
+      - name: Integration test
+        if: always()
+        run: pnpm test:integration --detect-open-handles
+        
+    

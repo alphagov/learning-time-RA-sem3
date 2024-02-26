@@ -3,7 +3,7 @@ import { exec } from 'child_process'
 export const dockerComposeUp = (isTestEnv = false) =>
   exec(
     isTestEnv
-      ? 'docker compose --env-file ./src/utils/test/test.env up'
+      ? 'docker compose --env-file ./test/integration/utils/test.env up'
       : 'docker compose up',
     (error, stdout, stderr) => {
       if (error) {
