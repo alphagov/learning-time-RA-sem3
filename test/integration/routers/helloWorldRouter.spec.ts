@@ -3,11 +3,14 @@ import { helloWorldValidationMiddleware } from '../../../src/middleware/helloWor
 import app from '../../../src/app'
 import { NextFunction, Request, Response } from 'express'
 
-jest.mock( '../../../src/middleware/helloWorld/helloWorldValidationMiddleware', () => ({
-  helloWorldValidationMiddleware: jest.fn(
-    (_req: Request, _res: Response, next: NextFunction) => next()
-  )
-}))
+jest.mock(
+  '../../../src/middleware/helloWorld/helloWorldValidationMiddleware',
+  () => ({
+    helloWorldValidationMiddleware: jest.fn(
+      (_req: Request, _res: Response, next: NextFunction) => next()
+    )
+  })
+)
 
 describe('helloWorld Endpoint tests', () => {
   beforeEach(() => {

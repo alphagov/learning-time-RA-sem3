@@ -1,4 +1,3 @@
-
 import { dockerComposeUp } from '../../../scripts/dockerComposeUp'
 import { dockerComposeDown } from '../../../scripts/dockerComposeDown'
 import {
@@ -10,8 +9,6 @@ import {
 import { pause } from '../../../src/utils/test/pause'
 import { createTestUserTable } from './createTestUserTable'
 import { isTestDbActive, testDbClient } from './testDbClient'
-
-
 
 const isTestEnv = true
 export const setupTestUserInDb = async () => {

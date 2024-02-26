@@ -12,7 +12,6 @@ export const testDbClient = new Sequelize(
   }
 )
 
-
 export const isTestDbActive = async (): Promise<boolean> => {
   try {
     await testDbClient.authenticate()

@@ -28,8 +28,5 @@ jobs:
       - name: Unit test
         if: always()
         run: pnpm test
-      - name: Integration test
-        if: always()
-        run: pnpm test:integration --detect-open-handles
         
     

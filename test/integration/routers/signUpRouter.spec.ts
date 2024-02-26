@@ -4,17 +4,19 @@ import { NextFunction, Request, Response } from 'express'
 import { TEST_USERNAME } from '../../../src/utils/test/constants'
 import { signUpRequestValidationMiddleware } from '../../../src/middleware/signup/signUpRequestValidationMiddleware'
 
-jest.mock('../../../src/middleware/signup/signUpRequestValidationMiddleware', () => ({
-  signUpRequestValidationMiddleware: jest.fn(
-    (_req: Request, _res: Response, next: NextFunction) => next()
-  )
-}))
+jest.mock(
+  '../../../src/middleware/signup/signUpRequestValidationMiddleware',
+  () => ({
+    signUpRequestValidationMiddleware: jest.fn(
+      (_req: Request, _res: Response, next: NextFunction) => next()
+    )
+  })
+)
 
 describe('helloWorld Endpoint tests', () => {
   beforeEach(() => {
     jest.clearAllMocks()
   })
-
 
   describe('GET endpoint tests', () => {
     it('returns a 200 and renders the GET endpoint template', async () => {

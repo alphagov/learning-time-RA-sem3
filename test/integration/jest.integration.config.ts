@@ -5,7 +5,7 @@ const config: JestConfigWithTsJest = {
   coveragePathIgnorePatterns: ['<rootDir>/node_modules/*'],
   testMatch: ['<rootDir>/**/*.spec.ts'],
   setupFiles: ['<rootDir>/utils/testEnvironmentVariables.ts'],
-  globalTeardown: '<rootDir>/utils/tearDownTestDb.ts', 
+  globalTeardown: '<rootDir>/utils/tearDownTestDb.ts',
   globalSetup: '<rootDir>/utils/setupTestDb.ts'
 }
 

@@ -5,11 +5,14 @@ import { TEST_PASSWORD, TEST_USERNAME } from '../utils/constants'
 import { randomUUID } from 'crypto'
 import { loginRequestValidationMiddleware } from '../../../src/middleware/login/loginRequestValidationMiddleware'
 
-jest.mock('../../../src/middleware/login/loginRequestValidationMiddleware', () => ({
-  loginRequestValidationMiddleware: jest.fn(
-    (_req: Request, _res: Response, next: NextFunction) => next()
-  )
-}))
+jest.mock(
+  '../../../src/middleware/login/loginRequestValidationMiddleware',
+  () => ({
+    loginRequestValidationMiddleware: jest.fn(
+      (_req: Request, _res: Response, next: NextFunction) => next()
+    )
+  })
+)
 
 describe('helloWorld Endpoint tests', () => {
   beforeEach(() => {

@@ -1,4 +1,4 @@
-import { testDbClient } from "./testDbClient"
+import { testDbClient } from './testDbClient'
 
 export const createTestUserTable = async () => {
   await testDbClient.query(
