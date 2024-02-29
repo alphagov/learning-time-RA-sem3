@@ -20,13 +20,12 @@ jobs:
       - name: corepack enable
         run: corepack enable
       - name: pnpm install
-        if: always()
         run: pnpm install
+      - name: cat package.json
+        run: cat package.json | grep lint
       - name: Lint
-        if: always()
         run: pnpm lint
       - name: Unit test
-        if: always()
         run: pnpm test
         
     
